@@ -1,0 +1,22 @@
+version: '3'
+services:
+  db:
+    image: postgres:11
+    restart: always
+    environment:
+      TZ: "Asia/Dubai"
+      POSTGRES_PASSWORD: changeme
+      POSTGRES_USER: metalnx
+      POSTGRES_DB: irods-ext
+    ports:
+      - "15432:5432"  
+
+  metalnx:
+    image: irods/metalnx:latest
+    restart: always
+    environment:
+      TZ: "Asia/Dubai"
+    volumes:
+      - ./metalnx-configuration:/etc/irods-ext
+    ports:
+      - 80:8080

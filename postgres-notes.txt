@@ -1,0 +1,17 @@
+
+To list the rows of irods ingested metadata.
+$ su - postgres -c "psql -d ICAT -c 'SELECT COUNT(*) FROM public.r_data_main;'"
+
+
+To list the top 10 consumed table with the defailed row count.
+$ su - postgres -c "psql -c \"SELECT schemaname || '.' || tablename AS table_name,
+       pg_size_pretty(pg_total_relation_size(schemaname || '.' || tablename)) AS data_size,
+       pg_size_pretty(pg_relation_size(schemaname || '.' || tablename)) AS index_size,
+       pg_total_relation_size(schemaname || '.' || tablename) AS total_size,
+       (SELECT reltuples FROM pg_class WHERE relname = tablename) AS num_rows
+FROM pg_tables
+ORDER BY num_rows DESC
+LIMIT 10;\""
+
+Reclaims unused space in the database.
+$ su - postgres -c "psql -c 'VACUUM FULL'"

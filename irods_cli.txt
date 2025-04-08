@@ -1,0 +1,9 @@
+To list all files associated with the zone
+$ils -A -r -L
+
+To unregister files from the irods catalog 
+$iunreg <path-to-file>
+
+To remove from the trash
+$irmtrash 
+
