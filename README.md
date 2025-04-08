@@ -2,6 +2,11 @@
 
 This setups includes iRODS v4.3.1 and this needs to run on a blade server and postgres is needed to run as standalone. 
 
+Technologies Used
+iRODS 4.3.1
+Docker >=26
+Python >=3.11
+
 Refer, irods official documentation for the installation part. 
 
 Note:- postgres cannot be containerzied due to performance issues. 
@@ -57,5 +62,9 @@ http://example.com/metalnx/login/
 
 #### Future plans:- 
 
-- Efficinetly remove the modified files from the irods catalog
+- Efficiently remove the modified files from the irods catalog
 - Remove files using the metadata json file.
+
+## Other Useful Links
+
+- [iRODS](https://irods.org/) 
