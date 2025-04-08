@@ -33,8 +33,10 @@ perl Create_IrodesJson.pl out.txt
 The first task is to create the directory and file structure similiar to the HPC cluster to the irods running server
 ```
 sh makedir.sh
+```
 
 Then supply the data ingest command to feed the metadata to the iRODS catalog.
+
 ```
 python data_ingest.py <path-to-json-file>
 ```
