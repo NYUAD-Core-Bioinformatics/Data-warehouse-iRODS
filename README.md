@@ -113,7 +113,10 @@ Please confirm [yes]:
 iRODS zone key:irods
 iRODS negotiation key (32 characters):AbcDef1234567890AbcDef1234567890
 ```
-
+Record the credential in the home directory to record the login information for iRods CLI.
+```
+iinit
+```
 
 Systemd unit file for autostart up.
 ```
