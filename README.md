@@ -113,10 +113,7 @@ Please confirm [yes]:
 iRODS zone key:irods
 iRODS negotiation key (32 characters):AbcDef1234567890AbcDef1234567890
 ```
-Record the credential in the home directory to record the login information for iRods CLI.
-```
-iinit
-```
+
 
 Systemd unit file for autostart up.
 ```
@@ -140,6 +137,23 @@ LimitNOFILE=1048576
 [Install]
 WantedBy=multi-user.target
 ```
+
+Enable and start irods service 
+```
+systemctl daemon-reload
+systemctl restart irods
+```
+
+Record the credential in the home directory to record the login information for iRods CLI.
+```
+iinit
+```
+
+Then verify if the retrieval is working.
+```
+ils -r -A
+```
+
 
 Note:- postgressql cannot be containerzied due to performance issues. 
 
